@@ -1,0 +1,229 @@
+:root {
+  color-scheme: dark;
+  --content-padding: 20px;
+  --font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --thumbnail-width: 220px;
+  --thumbnail-height: 280px;
+  --thumbnail-gap: 15px;
+  --trans-center: translate(-50%,-50%);
+  --emboss-shadow: 1px 1px 0 var(--black-a25), 0 -1px 0 var(--base-shadow-color);
+  --emboss-shadow-selected:
+    1px 1px 0 var(--black-a25), 1px 1px 0 var(--black-a25), 1px 1px 0 var(--black-a25),
+    1px 1px 0 var(--black-a25), 1px 1px 0 var(--black-a25), 1px 1px 0 var(--black-a25),
+    0 -1px 0 var(--base-shadow-color), 0 -1px 0 var(--base-shadow-color), 0 -1px 0 var(--base-shadow-color),
+    0 -1px 0 var(--base-shadow-color), 0 -1px 0 var(--base-shadow-color), 0 -1px 0 var(--base-shadow-color);
+}
+@media (max-width: 500px) {
+  :root {
+    --content-padding: 10px;
+  }
+}
+::selection {
+  color: var(--selected-text-color);
+  background: var(--selected-text-background)
+}
+[hidden] {
+  display: none !important;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-color: var(--base-surface-color) var(--base-background-color);
+  scrollbar-width: auto;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizelegibility !important;
+}
+*::-webkit-scrollbar {
+  width: auto;
+}
+*::-webkit-scrollbar-track {
+  background: var(--base-background-color);
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--base-surface-color);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--grey-9);
+}
+*::-webkit-scrollbar-thumb:active {
+  background: var(--white);
+}
+*::-webkit-scrollbar-button {
+  background: var(--base-background-color);
+}
+*::-webkit-scrollbar-button:active {
+  background: var(--grey-9);
+}
+*::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-position: center;
+  background-image: url("../images/icons/scroll-left.svg");
+}
+*::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-position: center;
+  background-image: url("../images/icons/scroll-right.svg");
+}
+*::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-position: center;
+  background-image: url("../images/icons/scroll-up.svg");
+}
+*::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-position: center;
+  background-image: url("../images/icons/scroll-down.svg");
+}
+.centered {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  font-size: 13px;
+  letter-spacing: .1em;
+  line-height: 1.4;
+  color: var(--base-text-color);
+  background: var(--base-background-color);
+}
+.main {
+  bottom: var(--content-padding);
+  display: block;
+  left: var(--content-padding);
+  position: fixed;
+  right: var(--content-padding);
+  top: var(--content-padding);
+}
+p {
+  margin: 10px 0;
+}
+hr {
+  height: 0;
+  border-top: 2px solid var(--active-color);
+  width: 80%;
+  margin: 15px 0;
+}
+.no-scroll {
+  overflow-y: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+h1, h2 {
+  color: transparent;
+  text-shadow: var(--emboss-shadow);
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+  line-height: 35px;
+  letter-spacing: 0;
+  margin: 25px 0;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+tr {
+  border-bottom: 1px solid var(--base-background-color);
+}
+tr:last-child {
+  border-bottom: 0;
+}
+th, td {
+  vertical-align: top;
+  text-align: left;
+  padding: calc(var(--content-padding) / 3);
+}
+tr:last-child th, tr:last-child td {
+  padding-bottom: var(--content-padding);
+}
+th:first-child, td:first-child {
+  color: var(--active-color);
+}
+@media (max-width: 500px) {
+  th, td {
+    display: block;
+  }
+}
+td p:first-of-type {
+  margin-top: 0;
+}
+.header {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 70px;
+  justify-self: start;
+}
+.page-header {
+  z-index: 2;
+}
+.page-header .button {
+  position: absolute;
+}
+.header h1 {
+  margin: 0;
+}
+.copy {
+  cursor: pointer;
+  position: relative;
+}
+.copy:hover,
+.copy:active,
+.copy:focus {
+  background-color: var(--active-color-2);
+  color: var(--selected-text-color);
+}
+.copied.copied {
+  background-color: var(--copied-background-color);
+}
+.copied:before {
+  color: var(--copied-text-color);
+  content: "Copied!";
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  z-index: 1;
+}
+dialog.panel {
+  color: var(--active-color-2);
+  left: 50%;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: var(--trans-center);
+  z-index: 100;
+}
+dialog::backdrop {
+  background: var(--transparent-surface-color);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+dialog header {
+  color: var(--action-background-color);
+  font-weight: bold;
+}
+dialog .buttons {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+  justify-content: right;
+}

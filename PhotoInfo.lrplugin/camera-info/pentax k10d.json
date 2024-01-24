@@ -1,0 +1,8 @@
+{
+  "camera": "pentax k10d",
+  "sensor": [
+    { "cropFactor": 1.5, "pixelSize": [3872, 2592] }
+  ],
+  "phaseDetectionFocusLayout": "pentax safox 9+ or lower",
+  "meteringSegmentsLayout": "pentax 16 segments"
+}

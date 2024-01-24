@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Photo Info</title>
+  </head>
+  <body>
+    <section class="main">
+      <!-- selected photo & overlays rendering area -->
+      <section id="photo-wrapper" class="loading">
+        <img id="photo" draggable="false" />
+        <div id="focus-areas"></div>
+        <div id="metering-segments"></div>
+      </section>
+      <!-- film strip panel -->
+      <a id="film-strip-icon" class="button circle-button with-icon film-strip-icon" tabindex="0" title="Toggle filmstrip panel with list of exported photos"></a>
+      <section id="film-strip" class="panel panel-left panel-toggle-top-left film-strip" hidden>
+        <h2>Exported Photos</h2>
+        <div id="film-strip-items" class="panel-items"></div>
+      </section>
+      <!-- metadata panel -->
+      <a id="info-icon" class="button circle-button with-icon info-icon" tabindex="0" title="Toggle metadata panel"></a>
+      <section id="metadata-info" class="panel panel-right panel-toggle-top-right" hidden>
+        <h2>
+          <a id="info-items-filter-icon" class="button circle-button with-icon filter-icon" tabindex="0" title="Filter"></a>
+          <a id="info-items-export" class="button circle-button with-icon save-icon" tabindex="0" title="Export data"></a>
+          Selected Photo Metadata: <span class="selected-filter-name"></span>
+        </h2>
+        <section id="info-items-filter-popup" class="panel popup panel-items" hidden></section>
+        <div id="info-items" class="panel-items"></div>
+      </section>
+      <!-- overlays toggle buttons -->
+      <a id="focus-areas-icon" class="button circle-button with-icon selected focus-areas-icon" tabindex="0" title="Toggle focus areas visualization"></a>
+      <a id="metering-segments-icon" class="button circle-button with-icon selected metering-segments-icon" tabindex="0" title="Toggle metering segments visualization"></a>
+      <a id="zoom-icon" class="button circle-button with-icon zoom-icon" tabindex="0" title="Toggle full-size mode"></a>
+      <!-- map panel -->
+      <a id="map-icon" class="button circle-button with-icon map-icon" tabindex="0" title="Toggle map"></a>
+      <section id="map" class="panel panel-right panel-toggle-bottom-right map" hidden></section>
+      <a id="map-zoom-in" class="button circle-button with-icon plus-icon" tabindex="0" title="Map zoom-in" hidden></a>
+      <a id="map-zoom-out" class="button circle-button with-icon minus-icon" tabindex="0" title="Map zoom-out" hidden></a>
+      <a id="map-size-icon" class="button circle-button with-icon zoom-icon map-size-icon" tabindex="0" title="Toggle map size" hidden></a>
+      <a id="map-variant-icon" class="button circle-button with-icon switch-icon" tabindex="0" title="Toggle map variant - OpenStreetMap | OpenTopoMap" hidden></a>
+    </section>
+    <!-- additional info popup -->
+    <div id="info-popup" class="info-popup"></div>
+    <!-- confirmation dialog -->
+    <dialog id="dialog" class="panel">
+      <header></header>
+      <p></p>
+      <div class="buttons">
+        <button id="first-button" class="button">OK</button>
+        <button id="second-button" class="button">Cancel</button>
+      </div>
+    </dialog>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
