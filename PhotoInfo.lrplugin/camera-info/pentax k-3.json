@@ -1,0 +1,8 @@
+{
+  "camera": "pentax k-3",
+  "sensor": [
+    { "cropFactor": 1.5, "pixelSize": [6016, 4000] }
+  ],
+  "phaseDetectionFocusLayout": "pentax safox 11",
+  "meteringSegmentsLayout": "pentax 1350 segments"
+}

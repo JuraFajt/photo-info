@@ -1,0 +1,56 @@
+:root {
+    
+    /* basic colors */
+    --black: #000;
+    --black-a25: rgba(0,0,0,.25);
+    --black-a8: rgba(0,0,0,.8);
+    --grey-2: #222;
+    --grey-3: #333;
+    --grey-6: #666;
+    --grey-9: #999;
+    --grey-c: #ccc;
+    --yellow-dark: #fc0;
+    --yellow: #ff9;
+    --yellow-light: #ffc;
+    --white: #fff;
+    --red: #c00;
+    --green: #090;
+    --blue: #09c;
+
+    /* basic color filters */
+    --grey-3-filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(263deg) brightness(102%) contrast(102%); /* #333 */
+    --grey-6-filter: invert(34%) sepia(0%) saturate(1707%) hue-rotate(134deg) brightness(110%) contrast(81%); /* #666 */
+    --grey-c-filter: invert(74%) sepia(0%) saturate(0%) hue-rotate(197deg) brightness(108%) contrast(100%); /* #ccc */
+    --yellow-dark-filter: invert(91%) sepia(24%) saturate(6266%) hue-rotate(357deg) brightness(99%) contrast(111%); /* #fc0 */
+    --yellow-light-filter: invert(93%) sepia(15%) saturate(624%) hue-rotate(350deg) brightness(108%) contrast(104%); /* #ffc */
+    
+    /* color usage contexts */
+    --selected-text-color: var(--black);
+    --selected-text-background: var(--yellow);
+    --base-text-color: var(--grey-c);
+    --base-background-color: var(--grey-2);
+    --base-surface-color: var(--grey-6);
+    --transparent-surface-color: var(--black-a8);
+    --active-color: var(--yellow-light);
+    --active-color-2: var(--yellow-dark);
+    --action-text-color: var(--white);
+    --action-icon-color: var(--grey-3);
+    --action-background-color: var(--grey-9);
+    --active-action-background-color: var(--grey-3);
+    --base-shadow-color: var(--white);
+    --highlighted-shadow-color: var(--black);
+    --focused-color: var(--red);
+    --focused-contrast-area-color: var(--green);
+    --focused-face-color: var(--yellow);
+    --copied-background-color: var(--green);
+    --copied-text-color: var(--white);
+    --map-icon-axis: var(--blue);
+    --map-icon-shape: var(--black);
+
+    /* color usage context filters */
+    --base-text-color-filter: var(--grey-c-filter);
+    --active-color-filter: var(--yellow-light-filter);
+    --active-color-2-filter: var(--yellow-dark-filter);
+    --action-icon-filter: var(--grey-3-filter);
+    
+}

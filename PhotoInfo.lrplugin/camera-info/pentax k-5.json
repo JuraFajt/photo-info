@@ -1,0 +1,9 @@
+{
+  "camera": "pentax k-5",
+  "sensor": [
+    { "cropFactor": 1.5, "pixelSize": [4928, 3264] }
+  ],
+  "contrastDetectionFrameSize": [720, 480],
+  "phaseDetectionFocusLayout": "pentax safox 9+ or lower",
+  "meteringSegmentsLayout": "pentax 77 segments"
+}

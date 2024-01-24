@@ -1,0 +1,8 @@
+{
+  "camera": "pentax *ist dl",
+  "sensor": [
+    { "cropFactor": 1.5, "pixelSize": [3008, 2008] }
+  ],
+  "phaseDetectionFocusLayout": "pentax safox 8 with 3 areas",
+  "meteringSegmentsLayout": "pentax 16 segments"
+}

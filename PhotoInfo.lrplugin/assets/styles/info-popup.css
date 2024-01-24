@@ -1,0 +1,107 @@
+.info-popup {
+  background: var(--base-background-color);
+  border: 1px solid var(--grey-6);
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0009;
+  display: flex;
+  flex-flow: column;
+  max-width: 65vw;
+  min-height: 40px;
+  min-width: 70px;
+  opacity: 0;
+  padding: 10px 15px;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 20;
+}
+.info-popup.vertical {
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, 20px);
+}
+.info-popup.horizontal {
+  align-items: center;
+  justify-content: center;
+  transform: translate(20px, -50%);
+}
+.info-popup.active {
+  opacity: 1;
+}
+.info-popup:before {
+  background: var(--base-background-color);
+  border: 1px solid var(--grey-6);
+  content: '';
+  display: block;
+  height: 15px;
+  position: absolute;
+  transform: rotate(45deg);
+  transform-origin: center;
+  width: 15px;
+}
+.info-popup.vertical:before {
+  border-width: 1px 0 0 1px;
+  left: calc(50% - 8px);
+  top: -8px;
+}
+.info-popup.vertical.flipped:before {
+  border-width: 0 1px 1px 0;
+  left: calc(50% - 8px);
+  bottom: -8px;
+  top: auto;
+}
+.info-popup.horizontal:before {
+  border-width: 0 0 1px 1px;
+  left: -8px;
+  top: calc(50% - 8px);
+}
+.info-popup.horizontal.flipped:before {
+  border-width: 1px 1px 0 0;
+  right: -8px;
+  left: auto;
+  top: calc(50% - 8px);
+}
+.info-popup .value {
+  font-weight: bold;
+}
+.info-popup .focused.value {
+  color: var(--focused-color);
+}
+.info-popup .focused.face.value {
+  color: var(--focused-face-color);
+}
+.info-popup .focused.contrast-area.value {
+  color: var(--focused-contrast-area-color);
+}
+.info-popup .lv .value {
+  color: var(--active-color);
+}
+.info-popup .lv .red {
+  color: var(--red);
+}
+.info-popup .lv .green {
+  color: var(--green);
+}
+.info-popup .lv .blue {
+  color: var(--blue);
+}
+.film-strip-item-info {
+  flex-flow: row;
+  gap: 15px;
+  padding-right: 10px;
+}
+.film-strip-item-info .text-wrapper {
+  margin: 5px 0;
+}
+.film-strip-item-info .text-wrapper p {
+  margin-top: 0;
+}
+.film-strip-item-info .text-wrapper p:last-child {
+  margin-bottom: 0;
+}
+.film-strip-item-info .path {
+  font-size: 9px;
+}
+.film-strip-item-info .id .value {
+  color: var(--active-color);
+}

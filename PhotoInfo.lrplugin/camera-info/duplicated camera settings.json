@@ -1,0 +1,25 @@
+{
+  "duplicatedCameraSettings": {
+    "nikon d5300": "nikon d5200",
+    "nikon d5500": "nikon d5200",
+    "nikon d7200": "nikon d7100",
+    "nikon d800e": "nikon d800",
+    "nikon d810": "nikon d800",
+    "pentax k-1 mark ii": "pentax k-1",
+    "pentax k-5 iis": "pentax k-5 ii",
+    "pentax k-30": "pentax k-5",
+    "pentax k-50": "pentax k-5",
+    "pentax k-500": "pentax k-5",
+    "pentax k2000": "pentax k-m",
+    "pentax *ist ds": "pentax *ist d",
+    "pentax *ist ds2": "pentax *ist d",
+    "pentax k100d": "pentax *ist d",
+    "pentax k100d super": "pentax *ist d",
+    "pentax k110d": "pentax *ist d",
+    "pentax k200d": "pentax k10d",
+    "pentax k-7": "pentax k20d",
+    "pentax k-3 ii": "pentax k-3",
+    "pentax kp": "pentax k-3",
+    "pentax k-r": "pentax k-x"
+  }
+}

@@ -1,0 +1,154 @@
+:root {
+  /* basic focus area border width, will be overriden in script */
+  --focus-area-border: 5px;
+  /* metering segments */
+  --ms-background: #fff;
+  --ms-opacity: .1;
+  --ms-opacity-active: .3;
+  --ms-opacity-highlighted: .5;
+  --ms-opacity-active-highlighted: .7;
+}
+#photo-wrapper {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  filter: blur(0px);
+  opacity: 1;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+#photo-wrapper.loading {
+  filter: blur(20px);
+  opacity: 0;
+}
+#photo {
+  border: 1px solid var(--base-surface-color);
+  /* transition: all 0.3s ease-in-out; */
+}
+.actual-photo-size #photo {
+  max-height: unset;
+  max-width: unset;
+  cursor: grab;
+  position: absolute;
+}
+#photo.panning {
+  cursor: grabbing;
+}
+#focus-areas,
+#metering-segments {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+#metering-segments.svg-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  left: auto;
+  top: auto;
+}
+#focus-areas {
+  z-index: 2;
+}
+.actual-photo-size #focus-areas,
+.actual-photo-size #metering-segments {
+  display: none;
+}
+.loading #focus-areas,
+.loading #metering-segments {
+  display: none;
+}
+.focus-area {
+  box-sizing: border-box;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: var(--focus-area-border) solid #0003;
+  border-radius: var(--focus-area-border);
+  outline: 0;
+}
+.focus-area:active,
+.focus-area:focus,
+.focus-area:hover {
+  background: #0003;
+  box-shadow:
+    1px 1px 0 var(--base-shadow-color),
+    1px -1px 0 var(--base-shadow-color),
+    -1px -1px 0 var(--base-shadow-color),
+    -1px 1px 0 var(--base-shadow-color),
+    1px 1px 0 var(--base-shadow-color),
+    1px -1px 0 var(--base-shadow-color),
+    -1px -1px 0 var(--base-shadow-color),
+    -1px 1px 0 var(--base-shadow-color);
+}
+.focus-area.selected {
+  border-color: #000c;
+}
+.focus-area.selected:active,
+.focus-area.selected:focus,
+.focus-area.selected:hover {
+  background: #0009;
+}
+.focus-area.focused {
+  border-color: var(--focused-color);
+}
+.focus-area.focused:active,
+.focus-area.focused:focus,
+.focus-area.focused:hover,
+.highlighted  .focus-area.focused {
+  background: #c009;
+}
+.focus-area.face.focused {
+  border-color: var(--focused-face-color);
+}
+.focus-area.face.focused:active,
+.focus-area.face.focused:focus,
+.focus-area.face.focused:hover {
+  background: #ffc6;
+}
+.focus-area.contrast-area.focused {
+  border-color: var(--focused-contrast-area-color);
+}
+.focus-area.contrast-area.focused:active,
+.focus-area.contrast-area.focused:focus,
+.focus-area.contrast-area.focused:hover {
+  background: #0906;
+}
+.highlighted .focus-area,
+.highlighted .focus-area.face,
+.highlighted .focus-area.contrast-area {
+  border-color: var(--active-color);
+  box-shadow: 0 0 var(--focus-area-border) var(--highlighted-shadow-color),
+    0 0 calc(var(--focus-area-border) / 4) var(--highlighted-shadow-color),
+    0 0 calc(var(--focus-area-border) / 2) var(--highlighted-shadow-color),
+    0 0 calc(var(--focus-area-border) * 2) var(--highlighted-shadow-color),
+    inset 0 0 var(--focus-area-border) var(--highlighted-shadow-color),
+    inset 0 0 calc(var(--focus-area-border) / 4) var(--highlighted-shadow-color),
+    inset 0 0 calc(var(--focus-area-border) / 2) var(--highlighted-shadow-color),
+    inset 0 0 calc(var(--focus-area-border) * 2) var(--highlighted-shadow-color);
+}
+.metering-segment {
+  background: var(--ms-background);
+  fill: var(--ms-background);
+  opacity: var(--ms-opacity);
+  outline: none;
+  position: absolute;
+}
+.metering-segment:active,
+.metering-segment:focus,
+.metering-segment:hover {
+  opacity: var(--ms-opacity-active);
+}
+.highlighted .metering-segment {
+  opacity: var(--ms-opacity-highlighted);
+}
+.highlighted .metering-segment:active,
+.highlighted .metering-segment:focus,
+.highlighted .metering-segment:hover {
+  opacity: var(--ms-opacity-active-highlighted);
+}

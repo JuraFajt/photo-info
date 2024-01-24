@@ -1,0 +1,10 @@
+{
+  "camera": "pentax k-1",
+  "sensor": [
+    { "cropFactor": 1, "pixelSize": [7360, 4912] },
+    { "cropFactor": 1.5, "pixelSize": [4800, 3200] }
+  ],
+  "contrastDetectionFrameSize": [720, 480],
+  "phaseDetectionFocusLayout": "pentax safox 12",
+  "meteringSegmentsLayout": "pentax 1350 segments"
+}
