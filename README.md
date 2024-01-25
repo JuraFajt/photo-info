@@ -52,9 +52,12 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
 ### Lightroom Plugin Manager Setup
 
 - Open the Plugin Manager from application menu `File` -> `Plug-in Manager...`
-    ![Plugin Manager screenshot](docs/images/plugin-manager.png)
+
+    ![Plugin Manager screenshot](docs/images/plugin-manager-01.png)
 
 - Click the `Add` button at the bottom, browse to the filesystem path where the `PhotoInfo.lrplugin` folder was stored and click `Select Folder`.
+
+    ![Plugin Manager screenshot](docs/images/plugin-manager-02.png)
 
 - Now the `View Photo Info` plugin information should be visible in the Plugin Manager, enabled & running.
 
@@ -66,6 +69,7 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
 ## Running the plugin
 
 - The plugin actions are accessible from application menu `File` -> `Plug-in Extras` -> `View Photo Info` commands section.
+
     ![Plugin menu screenshot](docs/images/use-01.png)
 
     - `Open last export results` just opens the last exported `index.html` file (if it exists).
@@ -75,14 +79,17 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
     - `Remove selected photo(s) exported data and preview files` starts cleanup of exported data for selected photos.
 
 - When running the export, progress bar is displayed at the top of the main window. Clicking the progress bar displays detailed progress info.
+
     ![Plugin menu screenshot](docs/images/use-02.png)
 
 - After a successfull export, the exported photo(s) are also added to the dedicated `View Photo Info Plugin Collection`. This can be useful for example for removing some (or all) of the exported photo(s) previews and data files.
+
     ![Plugin menu screenshot](docs/images/use-03.png)
 
 ## Displaying exported data
 
 - After successful export, the data will be displayed in a local HTML page (`index.html` file in the export path). This file should get automatically open in default system browser.
+
     ![Exported page screenshot](docs/images/exported-01.png)
 
 - Main panels and some other UI features can be toggled with the icons in page corners.

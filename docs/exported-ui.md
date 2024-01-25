@@ -4,7 +4,7 @@
 
 ## Filmstrip panel
 
-- Can be toggled with ![Toggle filmstrip button](exported-toggle-filmstrip.png) button in the top left page corner.
+- Can be toggled with ![Toggle filmstrip button](images/exported-toggle-filmstrip.png) button in the top left page corner.
 
 - Displays the list of exported photos.
 
@@ -14,21 +14,21 @@
 
 ## Main photo area
 
-- Displays the currently selected photo in scaled or actual 1:1 size mode. Switching the mode is done with ![Toggle actual size button](exported-toggle-actual-pthoto-size.png) button.
+- Displays the currently selected photo in scaled or actual 1:1 size mode. Switching the mode is done with ![Toggle actual size button](images/exported-toggle-actual-photo-size.png) button.
 
 - In the actual size mode, image overlays are disabled and the image panning is possible.
 
 - In the scaled size mode, image overlays for `focus areas` and `metering segments` can be displayed. Hovering the particular UI element will display a tooltip with more information.
 
-- `Focus areas` are displayed with ![Toggle focus areas](exported-toggle-focus-areas.png) button.
+- `Focus areas` are displayed with ![Toggle focus areas](images/exported-toggle-focus-areas.png) button.
 
-- `Metering segments` are displayed with ![Toggle metering segments](exported-toggle-metering-segments.png) button.
+- `Metering segments` are displayed with ![Toggle metering segments](images/exported-toggle-metering-segments.png) button.
 
 - Both focus areas & metering segments overlays can be toggled between normal, hightlighted and no display states.
 
 ## Metadata panel
 
-- Can be toggled with ![Toggle metadata button](exported-toggle-metadata.png) button in the top right corner.
+- Can be toggled with ![Toggle metadata button](images/exported-toggle-metadata.png) button in the top right corner.
 
 - Displays exported metadata for the selected photo, optionally filtered by currently selected filter.
 
@@ -38,20 +38,20 @@
 
 ## Map panel
 
-- Can be toggled with ![Toggle map button](exported-toggle-map.png) button in the bottom right corner.
+- Can be toggled with ![Toggle map button](images/exported-toggle-map.png) button in the bottom right corner.
 
 - Displays selected photo location with location-related data in a map.
 
-- The ![Toggle map variant button](exported-toggle-map-variant.png) button toggles between OpenStreetMap and OpenTopoMap tile variants.
+- The ![Toggle map variant button](images/exported-toggle-map-variant.png) button toggles between OpenStreetMap and OpenTopoMap tile variants.
 
-- The ![Toggle map size button](exported-toggle-map-size.png) button toggles between small and expanded map view.
+- The ![Toggle map size button](images/exported-toggle-map-size.png) button toggles between small and expanded map view.
 
 - Photos are represented by small camera icons. Those can be directional & properly oriented in the map if needed data is available. 
 
 - If there are multiple photos close to one location, the corresponding icons might be grouped into clusters. Clicking the cluster will expand it into a "spider" and the particular photo icons can then be selected.
 
 - Selecting the photo icon in map will display a tooltip with additional location and orientation data.
-    ![Toggle map tooltip](exported-map-tooltip.png)
+    ![Toggle map tooltip](images/exported-map-tooltip.png)
 
 - Clicking the thumbnail in the tooltip will select the particular photo for displaying detailed info in the main area.
 
