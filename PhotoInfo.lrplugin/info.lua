@@ -19,6 +19,6 @@ return {
 	LrPluginName = 'View Photo Info',
 	LrSdkVersion = 5.0,
   LrSdkMinimumVersion = 5.0,
-	LrToolkitIdentifier = 'com.jirifajt.viewphotoinfo',
+	LrToolkitIdentifier = 'com.jurafajt.viewphotoinfo',
 	VERSION = { major=0, minor=0, revision=1, build=1, },
 }

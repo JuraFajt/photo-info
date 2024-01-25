@@ -9,7 +9,7 @@ Adobe Lightroom plugin for exporting and displaying detailed photo information i
 - Overcome the discrepancies between MacOS and Windows regarding rendering layered graphics in LR.
 - Overcome the problem with guessing correct LR dialog size on Windows.
 - Additional interactivity compared to some existing plugins.
-- More accurate visualisation of focus areas and metering segments.
+- More accurate visualization of focus areas and metering segments.
 - Covering various crop modes for a given camera.
 - Storing the exported info for later browsing (incremental exports).
 - Sharing configuration data for various camera models if possible.
@@ -73,6 +73,61 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
 | Pentax KP           | 2017 | 6016×4000, 1.5× | Safox 11           | 27        | 1350              |
 | Pentax K-1 Mark II  | 2018 | 7360×4912, 1×<br>4800×3200, 1.5× | Safox 12 | 33 | 1350              |
 
+
+## Installation
+
+### Downloading the `PhotoInfo.lrplugin`
+
+- In the [GitHub repository page](https://github.com/JuraFajt/photo-info), click the `Code` button, then the `Download ZIP` button.
+    ![GitHub screenshot](docs/download.png)
+
+- That should download the `photo-info-main.zip` file. It contains the `photo-info-main` folder with the `PhotoInfo.lrplugin` folder inside.
+
+- Copy the `PhotoInfo.lrplugin` folder to a preferred place in your local filesystem.
+
+### Lightroom Plugin Manager Setup
+
+- Open the Plugin Manager from application menu `File` -> `Plug-in Manager...`
+    ![Plugin Manager screenshot](docs/plugin-manager.png)
+
+- Click the `Add` button at the bottom, browse to the filesystem path where the `PhotoInfo.lrplugin` folder was stored and click `Select Folder`.
+
+- Now the `View Photo Info` plugin information should be visible in the Plugin Manager, enabled & running.
+
+- Last mandatory thing to set up before using the plugin is the `Export Path` in the `Settings` section. It should point to a folder where the exported data will be stored. It is important to **select a different folder than the plugin folder itself!**
+
+- Close the Plugin Manager by clicking the `Done` button.
+
+
+## Running the plugin
+
+- The plugin actions are accessible from application menu `File` -> `Plug-in Extras` -> `View Photo Info` commands section.
+    ![Plugin menu screenshot](docs/use-01.png)
+
+    - **Open last export results** just opens the last exported `index.html` file (if it exists).
+
+    - **Export and show selected photo(s) info** starts eporting previews and data for selected photos.
+
+    - **Remove selected photo(s) exported data and preview files** starts cleanup of exported data for selected photos.
+
+- When running the export, progress bar is displayed at the top of the main window. Clicking the progress bar displays detailed progress info.
+    ![Plugin menu screenshot](docs/use-02.png)
+
+- After a successfull export, the exported photo(s) are also added to the dedicated `View Photo Info Plugin Collection`. This can be useful for example for removing some (or all) of the exported photo(s) previews and data files.
+    ![Plugin menu screenshot](docs/use-03.png)
+
+## Displaying exported data
+
+- After successful export, the data will be displayed in a local HTML page (`index.html` file in the export path). This file should get automatically open in default system browser.
+    ![Exported page screenshot](docs/exported-01.png)
+
+### Filmstrip panel
+
+### Main photo area
+
+### Metadata panel
+
+### Map panel
 
 ## TODO
 
