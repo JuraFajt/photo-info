@@ -300,9 +300,12 @@ sub ShiftTime($;$$$)
 #
     SplitTime($val, \@time) or return "Invalid time string ($val)";
     if (defined $time[0]) {
+        return "Can't shift from year 0000" if $time[0] eq '0000';
         $mode = defined $time[3] ? 'DateTime' : 'Date';
     } elsif (defined $time[3]) {
         $mode = 'Time';
+    } else {
+        $mode = '';
     }
     # get number of digits after the seconds decimal point
     if (defined $time[5] and $time[5] =~ /\.(\d+)/) {
@@ -400,7 +403,7 @@ sub ShiftTime($;$$$)
             };
             $@ and return CleanWarning($@);
             $tm += $$shiftOffset{$mode};    # apply the shift
-            $tm < 0 and return 'Shift results in negative time';
+            $tm < 0 and return 'Shift results in date before 1970';
             # save fractional seconds in shifted time
             $frac = $tm - int($tm);
             if ($frac) {
@@ -629,7 +632,7 @@ limited to the range 1970 to 2038 on 32-bit systems.
 
 =head1 AUTHOR
 
-Copyright 2003-2020, Phil Harvey (philharvey66 at gmail.com)
+Copyright 2003-2024, Phil Harvey (philharvey66 at gmail.com)
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
