@@ -1,6 +1,6 @@
 local LrFileUtils = import 'LrFileUtils'
 local LrPathUtils = import 'LrPathUtils'
-local LrMobdebug = import 'LrMobdebug'
+-- local LrMobdebug = import 'LrMobdebug'
 local json = require 'json'
 require 'cameraInfo'
 require 'fileUtils'
@@ -8,7 +8,7 @@ require 'logger'
 require 'preferences'
 require 'utils'
 
-LrMobdebug.start()
+-- LrMobdebug.start()
 
 exiftool = LrPathUtils.child(_PLUGIN.path, 'bin')
 exiftool = LrPathUtils.child(exiftool, 'exiftool')
@@ -31,7 +31,6 @@ local function getSavePreviewCommand(photoFile, previewFile)
   if (WIN_ENV) then
     local values = { exiftoolWindows = exiftoolWindows, sourceFile = photoFile, targetFile = previewFile, }
     command = formatTemplate('"{exiftoolWindows}" -bigimage -b -W "{targetFile}" "{sourceFile}"', values)
-    -- command = '"' .. exiftoolWindows .. '" -bigimage -b -W "' .. previewFile .. '" "' .. photoFileInfo.path .. '"';
   else
     exiftool = string.gsub(exiftool, "'", singleQuoteWrap)
     path = string.gsub(photoFileInfo.path, "'", singleQuoteWrap)
@@ -55,7 +54,6 @@ local function getSaveMetadataFileCommand(photoFile, metadataFile)
   if (WIN_ENV) then
     local values = { exiftoolWindows = exiftoolWindows, sourceFile = photoFile, targetFile = metadataFile, }
     command = formatTemplate('"{exiftoolWindows}" -a -json "{sourceFile}" > "{targetFile}"', values)
-    -- command = '"' .. exiftoolWindows .. '" -bigimage -b -W "' .. previewFile .. '" "' .. photoFileInfo.path .. '"';
   else
     exiftool = string.gsub(exiftool, "'", singleQuoteWrap)
     path = string.gsub(photoFileInfo.path, "'", singleQuoteWrap)
@@ -311,7 +309,7 @@ end
 
 function exportGenericFiles(exportPath)
   
-  LrMobdebug.on()
+  -- LrMobdebug.on()
   
   local copy = function(pathInPlugin, exportFolder, transformations)
     local sourcePath = LrPathUtils.child(_PLUGIN.path, pathInPlugin)

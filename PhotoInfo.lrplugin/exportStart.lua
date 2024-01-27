@@ -1,10 +1,10 @@
 local LrApplication = import 'LrApplication'
-local LrMobdebug = import "LrMobdebug"
+-- local LrMobdebug = import "LrMobdebug"
 local LrPathUtils = import 'LrPathUtils'
 local LrTasks = import 'LrTasks'
 require 'exportUtils'
 
-LrMobdebug.start()
+-- LrMobdebug.start()
 
 --[[
 Only files / data export happens here. The rest of displaying logic is done
@@ -13,7 +13,7 @@ of the configuration is stored rather in JSON files than lua.
 ]]--
 local function exportStart()
 
-  LrMobdebug.on()
+  -- LrMobdebug.on()
 
   local catalog = LrApplication.activeCatalog()
   -- all selected photos

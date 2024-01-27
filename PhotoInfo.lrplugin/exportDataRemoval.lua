@@ -1,16 +1,16 @@
 local LrApplication = import 'LrApplication'
 local LrDialogs = import 'LrDialogs'
 local LrFileUtils = import 'LrFileUtils'
-local LrMobdebug = import "LrMobdebug"
+-- local LrMobdebug = import "LrMobdebug"
 local LrPathUtils = import 'LrPathUtils'
 local LrTasks = import 'LrTasks'
 require 'exportUtils'
 
-LrMobdebug.start()
+-- LrMobdebug.start()
 
 local function exportDataRemoval()
 
-  LrMobdebug.on()
+  -- LrMobdebug.on()
 
   -- confirm the action by the user first
   local dialogResult = LrDialogs.confirm(
