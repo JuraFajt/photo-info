@@ -1,12 +1,12 @@
 local LrErrors = import 'LrErrors'
 local LrFileUtils = import 'LrFileUtils'
-local LrMobdebug = import "LrMobdebug"
+-- local LrMobdebug = import "LrMobdebug"
 local LrPathUtils = import 'LrPathUtils'
 local json = require 'json'
 require 'fileUtils'
 require 'utils'
 
-LrMobdebug.start()
+-- LrMobdebug.start()
 
 local duplicates
 
