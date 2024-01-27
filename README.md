@@ -43,7 +43,8 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
 ### Downloading the `PhotoInfo.lrplugin`
 
 - In the [GitHub repository page](https://github.com/JuraFajt/photo-info), click the `Code` button, then the `Download ZIP` button.
-    ![GitHub screenshot](docs/images/download.png)
+
+    ![GitHub screenshot](docs/images/download.jpg)
 
 - That should download the `photo-info-main.zip` file. It contains the `photo-info-main` folder with the `PhotoInfo.lrplugin` folder inside.
 
@@ -70,7 +71,7 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
 
 - The plugin actions are accessible from application menu `File` -> `Plug-in Extras` -> `View Photo Info` commands section.
 
-    ![Plugin menu screenshot](docs/images/use-01.png)
+    ![Plugin menu screenshot](docs/images/use-01.jpg)
 
     - `Open last export results` just opens the last exported `index.html` file (if it exists).
 
@@ -80,17 +81,17 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
 
 - When running the export, progress bar is displayed at the top of the main window. Clicking the progress bar displays detailed progress info.
 
-    ![Plugin menu screenshot](docs/images/use-02.png)
+    ![Plugin menu screenshot](docs/images/use-02.jpg)
 
 - After a successfull export, the exported photo(s) are also added to the dedicated `View Photo Info Plugin Collection`. This can be useful for example for removing some (or all) of the exported photo(s) previews and data files.
 
-    ![Plugin menu screenshot](docs/images/use-03.png)
+    ![Plugin menu screenshot](docs/images/use-03.jpg)
 
 ## Displaying exported data
 
 - After successful export, the data will be displayed in a local HTML page (`index.html` file in the export path). This file should get automatically open in default system browser.
 
-    ![Exported page screenshot](docs/images/exported-01.png)
+    ![Exported page screenshot](docs/images/exported-01.jpg)
 
 - Main panels and some other UI features can be toggled with the icons in page corners.
 
