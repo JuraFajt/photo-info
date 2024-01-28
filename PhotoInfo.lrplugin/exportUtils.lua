@@ -10,12 +10,23 @@ require 'utils'
 
 -- LrMobdebug.start()
 
-exiftool = LrPathUtils.child(_PLUGIN.path, 'bin')
-exiftool = LrPathUtils.child(exiftool, 'exiftool')
-exiftool = LrPathUtils.child(exiftool, 'exiftool')
+binPath = LrPathUtils.child(_PLUGIN.path, 'bin')
 
-exiftoolWindows = LrPathUtils.child(_PLUGIN.path, 'bin')
+exiftoolMacOS = LrPathUtils.child(binPath, 'exiftool')
+exiftoolMacOS = LrPathUtils.child(exiftoolMacOS, 'exiftool')
+
+exiftoolWindows = LrPathUtils.child(binPath, 'exiftool')
+exiftoolWindows = LrPathUtils.child(exiftoolWindows, 'windows')
 exiftoolWindows = LrPathUtils.child(exiftoolWindows, 'exiftool.exe')
+
+magickMacOS = LrPathUtils.child(binPath, 'ImageMagick')
+magickMacOS = LrPathUtils.child(magickMacOS, 'mac')
+magickMacOS = LrPathUtils.child(magickMacOS, 'bin')
+magickMacOS = LrPathUtils.child(magickMacOS, 'magick')
+
+magickWindows = LrPathUtils.child(binPath, 'ImageMagick')
+magickWindows = LrPathUtils.child(magickWindows, 'windows')
+magickWindows = LrPathUtils.child(magickWindows, 'magick.exe')
 
 pluginCollectionName = 'View Photo Info Plugin Collection'
 
@@ -26,39 +37,46 @@ local foldersToCopy = {
 }
 
 local function getSavePreviewCommand(photoFile, previewFile)
-  local singleQuoteWrap = '\'"\'"\''
-  local command
-  if (WIN_ENV) then
-    local values = { exiftoolWindows = exiftoolWindows, sourceFile = photoFile, targetFile = previewFile, }
-    command = formatTemplate('"{exiftoolWindows}" -bigimage -b -W "{targetFile}" "{sourceFile}"', values)
-  else
-    exiftool = string.gsub(exiftool, "'", singleQuoteWrap)
-    path = string.gsub(photoFileInfo.path, "'", singleQuoteWrap)
-    command = "'".. exiftool .. "' -bigimage -b -W '" .. previewFile .. "' '" .. photoFileInfo.path .. "'";
-  end
+  local command, exe
+  -- TODO: MacOS variant needs testing & probably fixing.
+  if (WIN_ENV) then exe = exiftoolWindows else exe = exiftoolMacOS end
+  local values = {
+    exe = exe,
+    sourceFile = photoFile,
+    targetFile = previewFile,
+  }
+  command = formatTemplate('"{exe}" -bigimage -b -W "{targetFile}" "{sourceFile}"', values)
   return command
 end
 
 local function getUpdatePreviewCommand(previewFile, heightPercentage, widthPercentage, orientationAngle)
-  local values = { heightPercentage = heightPercentage, sourceFile = previewFile, targetFile = previewFile, widthPercentage = widthPercentage, orientationAngle = orientationAngle }
-  local template, rotateInstruction = 'convert "{sourceFile}" -bordercolor black -border {widthPercentage}%x{heightPercentage}% {rotateInstruction} "{targetFile}"'
-  if (orientationAngle ~= 0) then rotateInstruction = '-rotate {orientationAngle}' else rotateInstruction = '' end
-  template = string.gsub(template, '{rotateInstruction}', '-rotate {orientationAngle}')
+  local command, exe
+  -- TODO: MacOS variant needs testing & probably fixing.
+  if (WIN_ENV) then exe = magickWindows else exe = magickMacOS end
+  local values = {
+    exe = exe,
+    heightPercentage = heightPercentage,
+    magickWindows = magickWindows,
+    orientationAngle = orientationAngle,
+    sourceFile = previewFile,
+    targetFile = previewFile,
+    widthPercentage = widthPercentage,
+  }
+  local template = '"{exe}" "{sourceFile}" -bordercolor black -border {widthPercentage}%x{heightPercentage}% -rotate {orientationAngle} "{targetFile}"'
   command = formatTemplate(template, values)
   return command
 end
 
 local function getSaveMetadataFileCommand(photoFile, metadataFile)
-  local singleQuoteWrap = '\'"\'"\''
-  local command
-  if (WIN_ENV) then
-    local values = { exiftoolWindows = exiftoolWindows, sourceFile = photoFile, targetFile = metadataFile, }
-    command = formatTemplate('"{exiftoolWindows}" -a -json "{sourceFile}" > "{targetFile}"', values)
-  else
-    exiftool = string.gsub(exiftool, "'", singleQuoteWrap)
-    path = string.gsub(photoFileInfo.path, "'", singleQuoteWrap)
-    command = "'".. exiftool .. "' -a -json '" .. photoFileInfo.path .. "' > '" .. metadataFile .. "'";
-  end
+  local command, exe
+  -- TODO: MacOS variant needs testing & probably fixing.
+  if (WIN_ENV) then exe = exiftoolWindows else exe = exiftoolMacOS end
+  local values = {
+    exe = exe,
+    sourceFile = photoFile,
+    targetFile = metadataFile,
+  }
+  command = formatTemplate('"{exe}" -a -json "{sourceFile}" > "{targetFile}"', values)
   return command
 end
 
