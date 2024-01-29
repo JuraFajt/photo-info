@@ -20,5 +20,5 @@ return {
       enabledWhen = 'photosSelected',
     },
   },
-  VERSION = { major=0, minor=0, revision=1, build=1, },
+  VERSION = { display = '0.0.1  2024-01-30' },
 }
