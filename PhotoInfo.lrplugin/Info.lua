@@ -1,5 +1,9 @@
 return {
-	LrExportMenuItems = { 
+  LrSdkVersion = 5.0,
+  LrSdkMinimumVersion = 5.0,
+  LrToolkitIdentifier = 'com.jurafajt.viewphotoinfo',
+  LrPluginName = 'View Photo Info',
+  LrExportMenuItems = { 
     {
       title = 'Open last export results',
       file = 'openIndexFile.lua',
@@ -15,10 +19,5 @@ return {
       enabledWhen = 'photosSelected',
     },
   },
-  LrPluginInfoProvider = 'pluginProvider.lua',
-	LrPluginName = 'View Photo Info',
-	LrSdkVersion = 5.0,
-  LrSdkMinimumVersion = 5.0,
-	LrToolkitIdentifier = 'com.jurafajt.viewphotoinfo',
-	VERSION = { major=0, minor=0, revision=1, build=1, },
+  VERSION = { major=0, minor=0, revision=1, build="2024-01-29", },
 }
