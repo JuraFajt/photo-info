@@ -9,10 +9,14 @@
         https://ags.cuzk.cz/arcgis1/rest/services/ORTOFOTO_WM/MapServer/WMTS/tile/1.0.0/ORTOFOTO_WM/default/default028mm/17/44666/71826
         https://ags.cuzk.cz/arcgis1/rest/services/ORTOFOTO_WM/MapServer/WMTS/tile/1.0.0/ORTOFOTO_WM/default/default028mm/{z}/{x}/{y}
     - probably can be loaded via https://www.npmjs.com/package/esri-leaflet this way
+        ```html
         <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
-        L.esri.tiledMapLayer({
-            url: 'https://ags.cuzk.cz/arcgis1/rest/services/ORTOFOTO_WM/MapServer'
-        }).addTo(map);
+        <script>
+            L.esri.tiledMapLayer({
+                url: 'https://ags.cuzk.cz/arcgis1/rest/services/ORTOFOTO_WM/MapServer'
+            }).addTo(map);
+        </script>
+        ```
 - Contrast AF detection for Pentax K-1.
     - sensor 36.4 MP Sony IMX094 Exmor
 - Switching between phase & contrast detection AF visualization automatically
