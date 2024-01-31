@@ -2,40 +2,12 @@
 
 Adobe Lightroom plugin for exporting and displaying detailed photo information in a form of local HTML page.
 
+![Exported page screenshot](docs/images/exported-01.jpg)
 
-## Motivation behind this plugin
-
-- Visualization of additional photo data which is not easily being displayed in Lightroom.
-- Overcome the discrepancies between MacOS and Windows regarding rendering layered graphics in LR.
-- Overcome the problem with guessing correct LR dialog size on Windows.
-- Additional interactivity compared to some existing plugins.
-- More accurate visualization of focus areas and metering segments.
-- Covering various crop modes for a given camera.
-- Storing the exported info for later browsing (incremental exports).
-- Sharing configuration data for various camera models if possible.
-
-
-## How does it work
-
-Instead of error-prone generation of visual photo information using directly Lightroom UI and LUA dialogs,
-this plugin exports a set of scripts, styling, extracted image data and metadata to selected folder
-to compose a content of locally accessible HTML page. The exported HTML page will be automatically
-shown in default system web browser after each export batch is finished.
-
-The exported data is permanent, so viewable later even when Lightroom is closed. The export is incremental,
-original exported files are not being deleted and only if same files are selected on next export,
-the exported data for them will be rewritten.
-
-This is a tool for mostly analytical purposes. Thus it works with original preview image data (if available)
-and metadata. The corrections / image modifications done in Lightroom are not being considered. That means
-that LR crop, rotation, upright corrections etc. will be ignored and the plugin displays the image mostly
-in the state when it was taken. This makes it much easier to display focus areas and metering segments
-in correct places.
-
-For cameras with more than 1 crop factor option, the cropped area is also being shown as a dark frame.
-Examples: For a "full frame" camera photo taken with 1.5x APSC crop, the dark frame will be displayed.
-For a "full frame" camera photo taken with 1x factor (no crop), no dark frame is displayed.
-For an APSC camera with the possibility of only 1.5x crop factor, no dark frame is displayed.
+- [Motivation behind this plugin](docs/motivation.md)
+- [How does it work](docs/how-does-it-work.md)
+- [Technical details](docs/technical-details.md)
+- [Supported camera models (Pentax so far)](docs/supported-cameras.md)
 
 
 ## Installation
@@ -87,11 +59,12 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
 
     ![Plugin menu screenshot](docs/images/use-03.jpg)
 
+
 ## Displaying exported data
 
 - After successful export, the data will be displayed in a local HTML page (`index.html` file in the export path). This file should get automatically open in default system browser.
 
-    ![Exported page screenshot](docs/images/exported-01.jpg)
+    ![Exported page screenshot](docs/images/exported-02.jpg)
 
 - Main panels and some other UI features can be toggled with the icons in page corners.
 
@@ -100,7 +73,26 @@ For an APSC camera with the possibility of only 1.5x crop factor, no dark frame 
 [Displaying exported data - detailed description](docs/exported-ui.md)
 
 
-## [Supported camera models](docs/supported-cameras.md)
+## Special Thanks
+
+- This plugin was largely inspired by the [Focus Points Plugin](https://github.com/musselwhizzle/Focus-Points).
+  It uses simplified focus areas data contributed by these authors:
+  - [Joshua Musselwhite](https://github.com/musselwhizzle) (author of the Focus Points plugin)
+  - [Sean Anderson](https://github.com/roguephysicist) (Pentax cameras data)
+  - beholder3 (Pentax cameras data)
+
+- Another older [Show Focus Points Plugin](https://lightroomfocuspointsplugin.com/) which served as an inspiration.
+
+- The plugin uses the following libraries:
+  - [ExifTool](https://exiftool.org) by Phil Harvey
+  - [ImageMagick](https://imagemagick.org)
+  - [Leaflet](https://leafletjs.com) by Volodymyr Agafonkin
+  - [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster) by Dave Leaver
+
+- The plugin uses map data provided by the following vendors:  
+  - [OpenStreetMap](https://www.openstreetmap.org/copyright) & contributors
+  - [OpenTopoMap](https://opentopomap.org/credits) & contributors
+
 
 ## [TODOs, Improvement Suggestions](docs/todo.md)
 
